@@ -6,7 +6,7 @@
 - async.io??
 - psycopg2
 
-### Capturing Rythm-Bot messages (only showing the props I care about)
+### Capturing R-Bot messages
 1. direct plays
     - content: <youtube=xdawefweflwefaefsdgfvds> **searching**
     - content: **Playing** 🎶 `Freddie Gibbs & The Alchemist - Baby $hit (Visualizer)`
