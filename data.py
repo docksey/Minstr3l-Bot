@@ -80,14 +80,13 @@ class data:
     def upsert_track(self, track):
         try:
             query = f"""
-                INSERT INTO track (discord_id, name, command, nickname, monitor_channel, join_user)
+                INSERT INTO track (guild_id, url, name, host, length)
                 VALUES (
-                    {guild.discord_id},
-                    {guild.name},
-                    {guild.command},
-                    {guild.nickname},
-                    {guild.monitor_channel},
-                    {guild.join_user})"""
+                    {track.guild_id},
+                    {track.url},
+                    {track.name},
+                    {track.host},
+                    {track.length})"""
             
             self.conn = psycopg2.connect(self.connect_str)
             self.cursor = self.conn.cursor()

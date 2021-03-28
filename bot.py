@@ -41,7 +41,7 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
         await ctx.send('You do not have the correct role for this command.')
 
-@bot.command(name='ping', help='Pings the bot, returns latency. Why? ¯\_(ツ)_/¯')
+@bot.command(name='ping', help='Pings the bot, returns latency. ¯\_(ツ)_/¯')
 async def ping(ctx):
     '''
     This text will be shown in the help command
