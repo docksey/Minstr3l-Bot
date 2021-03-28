@@ -1,0 +1,35 @@
+CREATE TABLE guild (
+    guild_id integer PRIMARY KEY,
+    discord_id varchar (25) NOT NULL,
+    name varchar (100) NOT NULL,
+    command varchar (4) NOT NULL,
+    nickname varchar (16) NOT NULL,
+    monitor_channel varchar (25) NOT NULL,
+    join_user varchar (25) NOT NULL,
+    join_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE guild_bot (
+    guild_bot_id integer PRIMARY KEY,
+    guild_id varchar(25) NOT NULL,
+    bot_user_id varchar (25) NOT NULL,
+    bot_command varchar (4) NOT NULL,
+    pet_name VARCHAR (25) NOT NULL
+);
+
+CREATE TABLE track (
+    track_id integer PRIMARY KEY,
+    guild_id varchar(25) NOT NULL,
+    url VARCHAR (255) NULL,
+    name VARCHAR (255) NOT NULL,
+    host VARCHAR check (host in ('youtube', 'spotify', 'soundcloud', 'bandcamp')),
+    length VARCHAR (8) NULL
+);
+
+CREATE TABLE request (
+    request_id integer PRIMARY KEY,
+    guild_id varchar(25) NOT NULL,
+    track_id integer NOT NULL,
+    user_id varchar (25) NULL,
+    requested_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
