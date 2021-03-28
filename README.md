@@ -1,4 +1,5 @@
 # Minstr3l bot
+[P]ython [O]bject [O]riented [P]rogramming ;)
 
 ### packages needed
 - discord.py
